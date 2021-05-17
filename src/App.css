@@ -2,3 +2,15 @@
     margin: 1rem;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.window {
+    margin: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid black;
+}
+
+.window-handle {
+    min-height: 30px;
+    width: inherit;
+    background-color: red;
+}
