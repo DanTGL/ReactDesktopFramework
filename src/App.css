@@ -11,6 +11,6 @@
 
 .window-handle {
     min-height: 30px;
-    width: inherit;
+    width: inherit - 2px;
     background-color: red;
 }
