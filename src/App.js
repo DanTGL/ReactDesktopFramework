@@ -1,16 +1,19 @@
-import React, { Component} from "react";
+import React, {Component, useState} from "react";
 import "./App.css";
 import Window from "./Window.js"
 
 const apps = [
   {
-    color: "blue"
+    color: "blue",
+    appId: 0
   },
   {
-    color: "green"
+    color: "green",
+    appId: 1
   },
   {
-    color: "yellow"
+    color: "yellow",
+    appId: 2
   }
 ];
 
@@ -20,25 +23,32 @@ function App() {
     prevDraggedNode: null
   });
 
+  const list = [...apps];
+  
+  const [appList, setAppList] = useState(list);
+
 
   const openApp = (id) => {
-    current_index = window_order.indexOf(id);
+
+    const updatedList = [...appList];
+    const current_index = updatedList.findIndex(item => item.appId === id);
 
     if (current_index != -1) {
-      window_order.splice(current_index, 1);
+      const [item] = updatedList.splice(current_index, 1);
+      updatedList.push(item);
+      setAppList(updatedList);
     }
 
-    window_order.push(id);
     
-    return window_order.length() - 1;
+    //return window_order.length() - 1;
   };
 
   const createApp = (value, index) => {
-    return <Window managerRef={rndManagerRef} color={apps[index].color} />
+    return <Window managerRef={rndManagerRef} color={value.color} zIndex={index} key={value.appId.toString()} onDrag={openApp} appId={value.appId} />
   };
 
   const createApps = () => {
-    return apps.map(createApp)
+    return appList.map(createApp)
   };
 
   return(

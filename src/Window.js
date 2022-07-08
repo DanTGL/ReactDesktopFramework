@@ -22,10 +22,10 @@ class Window extends Component {
                     manager.prevDraggedNode.style.zIndex = manager.maxZIndex;*/
                     
                     
-                    manager.maxZIndex += 1
-                    manager.prevDraggedNode = node.node
-                    manager.prevDraggedNode.style.zIndex = manager.maxZIndex
-
+                    //manager.maxZIndex += 1
+                    //manager.prevDraggedNode = node.node
+                    //manager.prevDraggedNode.style.zIndex = manager.maxZIndex
+                    this.props.onDrag(this.props.appId);
                 }}
             >
                 <div className="window-handle"></div>
