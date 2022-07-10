@@ -36,8 +36,10 @@ class Window extends Component {
                         <button onClick={() => {this.props.closeApp(this.props.appId)}}>X</button>
                     </div>
                 </div>
-                <h1> Hello, World! </h1>
-                <h2>Test</h2>
+                <div className="window-content">
+                    <h1> Hello, World! </h1>
+                    <h2>Test</h2>
+                </div>
             </Rnd>
         );
     }

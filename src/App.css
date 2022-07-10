@@ -14,13 +14,19 @@ body {
 }
 
 .App > .desktop {
-    height: calc(100% - 50px)
+    height: calc(100% - 50px); /* 50px is the height of the taskbar */
 }
 
 .window {
-    margin: 1rem;
+    /*margin: 1rem;*/
     font-family: Arial, Helvetica, sans-serif;
     border: 2px solid black;
+}
+
+.window > .window-content {
+    
+    overflow:scroll;
+    height: calc(100% - 30px); /* 30px is the height of the window handle */
 }
 
 .window-handle {
@@ -45,4 +51,11 @@ body {
 .taskbar .app-icon {
     width: 25px;
     height: 25px;
+}
+
+.taskbar .app-icon:hover {
+    transition: 0.1s;
+    width: 35px;
+    height: 35px;
+    filter: brightness(150%);
 }
