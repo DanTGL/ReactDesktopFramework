@@ -43,8 +43,18 @@ function App() {
     //return window_order.length() - 1;
   };
 
+  const closeApp = (id) => {
+    const updatedList = [...appList];
+    const current_index = updatedList.findIndex(item => item.appId === id);
+
+    if (current_index != -1) {
+      updatedList.splice(current_index, 1);
+      setAppList(updatedList);
+    }
+  }
+
   const createApp = (value, index) => {
-    return <Window managerRef={rndManagerRef} color={value.color} zIndex={index} key={value.appId.toString()} onDrag={openApp} appId={value.appId} />
+    return <Window managerRef={rndManagerRef} color={value.color} zIndex={index} key={value.appId.toString()} onDrag={openApp} closeApp={closeApp} appId={value.appId} />
   };
 
   const createApps = () => {

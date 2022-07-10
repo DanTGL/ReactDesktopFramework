@@ -28,7 +28,13 @@ class Window extends Component {
                     this.props.onDrag(this.props.appId);
                 }}
             >
-                <div className="window-handle"></div>
+                <div className="window-handle">
+                    <div className="handle-buttons">
+                        <button>_</button>
+                        <button>&#x25A1;</button>
+                        <button onClick={() => {this.props.closeApp(this.props.appId)}}>X</button>
+                    </div>
+                </div>
                 <h1> Hello, World! </h1>
                 <h2>Test</h2>
             </Rnd>

@@ -14,3 +14,8 @@
     width: inherit - 2px;
     background-color: red;
 }
+
+.window-handle .handle-buttons button {
+    font-family: monospace;
+    font-size:12px;
+}
