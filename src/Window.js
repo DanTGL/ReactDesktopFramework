@@ -11,6 +11,7 @@ class Window extends Component {
                 className="window"
                 default={{x: 0, y: 0, width: 320, height: 200}}
                 dragHandleClassName="window-handle"
+                bounds="parent"
                 onDragStart={(e, node) => {
                     const manager = this.props.managerRef.current;
                     /*if (manager.prevDraggedNode) {

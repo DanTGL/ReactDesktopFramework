@@ -1,6 +1,20 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
 .App {
-    margin: 1rem;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.App > .desktop {
+    height: calc(100% - 50px)
 }
 
 .window {
@@ -11,11 +25,24 @@
 
 .window-handle {
     min-height: 30px;
-    width: inherit - 2px;
+    width: calc(inherit - 2px);
     background-color: red;
 }
 
 .window-handle .handle-buttons button {
     font-family: monospace;
     font-size:12px;
+}
+
+.taskbar {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+    align-self: center;
+}
+
+.taskbar .app-icon {
+    width: 25px;
+    height: 25px;
 }

@@ -33,12 +33,14 @@ function App() {
     const updatedList = [...appList];
     const current_index = updatedList.findIndex(item => item.appId === id);
 
-    if (current_index != -1) {
+    if (current_index !== -1) {
       const [item] = updatedList.splice(current_index, 1);
       updatedList.push(item);
-      setAppList(updatedList);
+    } else {
+      updatedList.push(apps[id]);
     }
-
+    
+    setAppList(updatedList);
     
     //return window_order.length() - 1;
   };
@@ -63,8 +65,18 @@ function App() {
 
   return(
     <div className="App">
-      <h1> Hello, World! </h1>
-      {createApps()}
+      <div className="desktop">
+        {createApps()}
+      </div>
+      <div className="taskbar">
+        {apps.map((value) => {
+        return (
+        <div className="app-icon" style={{backgroundColor: value.color}} onClick={() => {openApp(value.appId)}} key={"taskbar_" + value.appId.toString()}>
+          
+        </div>
+        )})
+        }
+      </div>
     </div>
   );
 }
