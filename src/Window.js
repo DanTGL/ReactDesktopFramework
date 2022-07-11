@@ -30,6 +30,9 @@ class Window extends Component {
                 }}
             >
                 <div className="window-handle">
+                    <span>
+                        {this.props.title}
+                    </span>
                     <div className="handle-buttons">
                         <button>_</button>
                         <button>&#x25A1;</button>

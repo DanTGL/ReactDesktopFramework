@@ -5,14 +5,17 @@ import Window from "./Window.js"
 const apps = [
   {
     color: "blue",
+    title: "Blue App",
     appId: 0
   },
   {
     color: "green",
+    title: "Green App",
     appId: 1
   },
   {
     color: "yellow",
+    title: "Yellow App",
     appId: 2
   }
 ];
@@ -56,7 +59,7 @@ function App() {
   }
 
   const createApp = (value, index) => {
-    return <Window managerRef={rndManagerRef} color={value.color} zIndex={index} key={value.appId.toString()} onDrag={openApp} closeApp={closeApp} appId={value.appId} />
+    return <Window managerRef={rndManagerRef} color={value.color} zIndex={index} key={value.appId.toString()} onDrag={openApp} closeApp={closeApp} appId={value.appId} title={value.title} />
   };
 
   const createApps = () => {

@@ -30,6 +30,9 @@ body {
 }
 
 .window-handle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     min-height: 30px;
     width: calc(inherit - 2px);
     background-color: red;
