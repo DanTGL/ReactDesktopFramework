@@ -6,17 +6,32 @@ const apps = [
   {
     color: "blue",
     title: "Blue App",
-    appId: 0
+    appId: 0,
+    content: (<div>
+    <h1> Hello, World! </h1>
+    <h2>This app is Blue!</h2>
+    </div>
+    )
   },
   {
     color: "green",
     title: "Green App",
-    appId: 1
+    appId: 1,
+    content: (<div>
+      <h1> Hello, World! </h1>
+      <h2>This app is Green!</h2>
+      </div>
+      )
   },
   {
     color: "yellow",
     title: "Yellow App",
-    appId: 2
+    appId: 2,
+    content: (<div>
+      <h1> Hello, World! </h1>
+      <h2>This app is Yellow!</h2>
+      </div>
+      )
   }
 ];
 
@@ -59,7 +74,7 @@ function App() {
   }
 
   const createApp = (value, index) => {
-    return <Window managerRef={rndManagerRef} color={value.color} zIndex={index} key={value.appId.toString()} onDrag={openApp} closeApp={closeApp} appId={value.appId} title={value.title} />
+    return <Window managerRef={rndManagerRef} color={value.color} zIndex={index} key={value.appId.toString()} onDrag={openApp} closeApp={closeApp} appId={value.appId} content={value.content} title={value.title} />
   };
 
   const createApps = () => {

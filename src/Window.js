@@ -40,8 +40,7 @@ class Window extends Component {
                     </div>
                 </div>
                 <div className="window-content">
-                    <h1> Hello, World! </h1>
-                    <h2>Test</h2>
+                    {this.props.content}
                 </div>
             </Rnd>
         );
