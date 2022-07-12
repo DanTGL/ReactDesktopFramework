@@ -12,7 +12,9 @@ class Window extends Component {
                 default={{x: 0, y: 0, width: 320, height: 200}}
                 dragHandleClassName="window-handle"
                 bounds="parent"
-                onDragStart={(e, node) => {
+                minWidth="100px"
+                minHeight="50px"
+                onMouseDown={() => {
                     const manager = this.props.managerRef.current;
                     /*if (manager.prevDraggedNode) {
                         manager.prevDraggedNode.style.zIndex = manager.prevDraggedNodeZIndex;

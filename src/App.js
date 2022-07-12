@@ -90,7 +90,7 @@ function App() {
         {apps.map((value) => {
         return (
         <div className="app-icon" style={{backgroundColor: value.color}} onClick={() => {openApp(value.appId)}} key={"taskbar_" + value.appId.toString()}>
-          
+          <span>{value.title}</span>
         </div>
         )})
         }

@@ -1,3 +1,10 @@
+:root {
+    --handle-height: 30px;
+    --handle-buttons-width: 60px;
+    --handle-min-width: calc(var(--handle-buttons-width) + 50px);
+    --taskbar-height: 60px;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -14,7 +21,7 @@ body {
 }
 
 .App > .desktop {
-    height: calc(100% - 50px); /* 50px is the height of the taskbar */
+    height: calc(100% - var(--taskbar-height)); /* 50px is the height of the taskbar */
 }
 
 .window {
@@ -24,18 +31,29 @@ body {
 }
 
 .window > .window-content {
-    
     overflow:scroll;
-    height: calc(100% - 30px); /* 30px is the height of the window handle */
+    text-overflow:clip;
+    max-height: 100%;
+    height: calc(100% - var(--handle-height)); /* 30px is the height of the window handle */
 }
 
 .window-handle {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    min-height: 30px;
+    min-height: var(--handle-height);
     width: calc(inherit - 2px);
     background-color: red;
+}
+
+.window-handle span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.window-handle .handle-buttons {
+    min-width: var(--handle-buttons-width);
 }
 
 .window-handle .handle-buttons button {
@@ -46,7 +64,7 @@ body {
 .taskbar {
     display: flex;
     flex-direction: row;
-    height: 50px;
+    height: var(--taskbar-height);
     align-items: center;
     align-self: center;
 }
